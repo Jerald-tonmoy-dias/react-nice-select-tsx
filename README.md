@@ -1,23 +1,23 @@
-# React NiceSelect
+# React Nice Select TSX
 
-React NiceSelect is a customizable, lightweight, and easy-to-use dropdown select component for React and Next.js. It is inspired by the jQuery Nice Selector but built specifically for React applications. This component removes any dependencies on jQuery and offers a simple and clean alternative for creating select dropdowns in your React projects.
+React Nice Select TSX is a customizable, lightweight, and easy-to-use dropdown select component for React and Next.js. It is inspired by the jQuery Nice Selector but built specifically for React/next js Typscript applications. This component removes any dependencies on jQuery and offers a simple and clean alternative for creating select dropdowns in your React projects.
 
 # Installation
 
 To use React NiceSelect in your project, you can install it via npm :
 
-     npm install react-nice-select
+     npm install react-nice-select-tsx
 
 **Make sure to also import the required stylesheet `nice-select.css` into your project.**
 
-    @import  'react-nice-select/nice-select.css';
-    @import  NiceSelect from "react-nice-select/NiceSelect";
+    @import  'react-nice-select-tsx/nice-select.css';
+    @import  NiceSelect from "react-nice-select-tsx/NiceSelect";
 
 # Usage
 
     import React from 'react';
-    import NiceSelect from "react-nice-select/NiceSelect";
-    import "react-nice-select/nice-select.css";
+    import NiceSelect from "react-nice-select-tsx/NiceSelect";
+    import "react-nice-select-tsx/nice-select.css";
 
     const YourComponent: React.FC = () => {
       const options: Option[] = [

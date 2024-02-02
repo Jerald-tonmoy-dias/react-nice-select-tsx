@@ -1,7 +1,7 @@
 {
   "name": "react-nice-select-tsx",
   "version": "1.0.0",
-  "description": "React NiceSelect is a customizable, lightweight, and easy-to-use dropdown select component for React and Next.js.",
+  "description": "React Nice Select TSX is a customizable, lightweight, and easy-to-use dropdown select component for React and Next.js applications.",
   "main": "NiceSelect.tsx",
   "scripts": {
     "build": "tsc"
@@ -12,11 +12,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jerald-tonmoy-dias/react-nice-select.git"
+    "url": "git+https://github.com/Jerald-tonmoy-dias/react-nice-select-tsx.git"
   },
   "keywords": [
     "react-nice-select",
-    "react",
+    "react-nice-select-tsx",
+    "react js",
     "next js",
     "tsx",
     "typescript",
@@ -28,9 +29,9 @@
   "author": "Jerald Tonmoy Dias",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Jerald-tonmoy-dias/react-nice-select/issues"
+    "url": "https://github.com/Jerald-tonmoy-dias/react-nice-select-tsx/issues"
   },
-  "homepage": "https://github.com/Jerald-tonmoy-dias/react-nice-select#readme",
+  "homepage": "https://github.com/Jerald-tonmoy-dias/react-nice-select-tsx#readme",
   "devDependencies": {
     "typescript": "^4.5.4"
   }
