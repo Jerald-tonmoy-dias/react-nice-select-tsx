@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState, KeyboardEvent } from "react";
 
 export interface Option {
-  value: string;
+  value: any;
   label: string;
 }
 
 export interface INiceSelect {
   options: Option[];
-  defaultValue?: string;
+  defaultValue?: any;
   onChange: (value: string) => void;
   wrapperClass?: string;
 }
@@ -19,14 +19,25 @@ const NiceSelect: React.FC<INiceSelect> = ({
   wrapperClass,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<Option | null>(
-    defaultValue
-      ? options.find((option) => option.value === defaultValue) || null
+  const [selectedOption, setSelectedOption] = useState<Option>(
+    defaultValue !== null
+      ? options.find((option) => option.value === defaultValue)
+      : defaultValue === 0
+      ? options.find((option) => option.value === 0)
       : null
   );
+
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setSelectedOption(
+      defaultValue !== null
+      ? options.find((option) => option.value === defaultValue)
+      : defaultValue === 0
+      ? options.find((option) => option.value === 0)
+      : null
+    );
+
     const handleClickOutside = (event: any) => {
       if (
         dropdownRef.current &&
@@ -41,16 +52,17 @@ const NiceSelect: React.FC<INiceSelect> = ({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [defaultValue, options]);
 
   const toggleDropdown = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
   };
 
-  const handleOptionClick = (option: Option) => {
-    setSelectedOption(option);
+  const handleOptionClick = (option: any) => {
     setIsOpen(false);
-    onChange(option.value);
+    onChange(option);
+    setSelectedOption(option);
+    console.log('ck_',option);
   };
 
   const handleKeyDown = (event: KeyboardEvent) => {
@@ -91,7 +103,7 @@ const NiceSelect: React.FC<INiceSelect> = ({
       ref={dropdownRef}
     >
       <span className="current">
-        {selectedOption ? selectedOption.label : ""}
+        {selectedOption ? selectedOption.label : "Please Select"}
       </span>
       <ul className={`list${isOpen ? " open" : ""}`}>
         {options.map((option: Option) => (
